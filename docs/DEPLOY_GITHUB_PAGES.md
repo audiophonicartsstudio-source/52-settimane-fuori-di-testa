@@ -6,7 +6,7 @@ URL del sito: [52 settimane fuori di testa](https://audiophonicartsstudio-source
 Stato delle pubblicazioni: [Actions](https://github.com/audiophonicartsstudio-source/52-settimane-fuori-di-testa/actions).
 
 ## Pubblicare aggiornamenti
-1. Modificare i dati in `data/esperienze_2027.csv`, oppure il codice del sito. Conservare ID e intestazioni.
+1. Per i dati usare normalmente il pannello **Gestione**: il suo salvataggio crea già il commit e avvia la pubblicazione. I passaggi successivi servono per modifiche tecniche al codice o per aggiornamenti manuali alternativi al CSV; conservare ID e intestazioni.
 2. Verificare il progetto con i comandi sotto.
 3. Salvare e caricare le modifiche:
    ```sh

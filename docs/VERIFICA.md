@@ -2,8 +2,8 @@
 ## Risultati
 - Installazione pulita con `npm ci`: riuscita.
 - `npm run check`: TypeScript riuscito.
-- `npm test`: 25 test passati (23 di modello/validazione e 2 di integrazione della CLI di sincronizzazione).
-- `npm run test:e2e`: 6 test passati su Chromium, desktop e viewport Pixel 7.
+- `npm test`: 42 test passati (23 di modello/validazione, 16 del pannello e 3 di integrazione della CLI di sincronizzazione).
+- `npm run test:e2e`: 14 test passati su Chromium, desktop e viewport Pixel 7.
 - Build production con `BASE_PATH=/52-settimane-fuori-di-testa/`: riuscita.
 - Test eseguiti sulla build production servita nella sottocartella Pages, non soltanto sul server di sviluppo.
 - Screenshot desktop 1440px e mobile 390px, dettaglio e calendario mobile: nessun errore JavaScript e nessun overflow orizzontale osservato.
@@ -24,3 +24,8 @@ Repository creato e caricato su GitHub, poi reso pubblico su autorizzazione espl
 Google Sheets non collegato per scelta dell'utente: testati parser, validazione e fallimenti senza usare un foglio reale. Nessun aggiornamento scolastico o disponibilità 2027 verificato online. I 46 link sono preservati e validati sintatticamente, non certificati come ancora attivi.
 Viewport mobile emulato in Chromium, non dispositivo Android fisico. Revisione di accessibilità di base, non audit WCAG completo.
 Node 22.23.4 usato per installazione pulita e test browser. Node 26 di sistema ha restituito errori di rete nell'ambiente di esecuzione; le verifiche sono state completate con Node LTS, senza modificare l'installazione di sistema.
+
+## Pannello di gestione
+Pannello statico gestione.html con accesso GitHub fine-grained, nessun nuovo servizio. La protezione delle scritture dipende dall'autorizzazione GitHub di ogni richiesta, non dalla segretezza della pagina. Il token non è persistito, non segue redirect e non viene inviato a origini diverse da api.github.com. La CSP di produzione è stata verificata nel browser.
+Test: accesso negato, dati invalidi, permessi di sola lettura, salvataggio di prenotazione/data/esito/diario/voti, UTF-8 e note multilinea, conservazione degli altri 51 record, conflitto sulla stessa esperienza e race SHA, confronto e riporto delle modifiche, uscita e ricaricamento senza token persistente, pubblicazione distinta dal salvataggio. Ulteriore test CLI: un CSV modificato dal pannello aggiorna il fallback generato; le build successive conservano il timestamp dalla cache e un errore non sostituisce l'ultimo dataset valido.
+La preflight CORS reale verso l'endpoint GitHub Contents ha restituito HTTP 204 con PUT, Authorization, Content-Type e X-GitHub-Api-Version consentiti. I test browser del salvataggio usano API simulate e credenziali esplicitamente fittizie, per non alterare le esperienze reali. Il primo accesso con un token personale resta una configurazione dell'utente. Revisione indipendente del codice e delle quattro schermate desktop/mobile: ship, nessun problema materiale rilevato; focus/caret nativi delle textarea segnalati solo come miglioramento cosmetico.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T17:35:46.701Z",
+  "generatedAt": "2026-10-30T22:43:55.271659Z",
   "title": "Design System: 52 settimane fuori di testa",
   "extensions": {
     "colorMeta": {
@@ -347,7 +347,33 @@
       "outlineOffset": "4px"
     },
     "backdrop": "#102b24a6",
-    "rampNote": "Tonal ramps are synthesized OKLCH previews, not additional shipped CSS tokens."
+    "rampNote": "Tonal ramps are synthesized OKLCH previews, not additional shipped CSS tokens.",
+    "adminSurface": {
+      "entry": "gestione.html",
+      "sources": [
+        "src/admin/admin.css",
+        "src/admin/Login.tsx",
+        "src/admin/AdminApp.tsx",
+        "src/admin/ActivityEditor.tsx",
+        "src/admin/ConfirmDialog.tsx",
+        "src/admin/github.ts",
+        "src/admin-main.tsx"
+      ],
+      "screenshots": [
+        ".impeccable/review/admin-login-desktop.png",
+        ".impeccable/review/admin-login-mobile.png",
+        ".impeccable/review/admin-editor-desktop.png",
+        ".impeccable/review/admin-editor-mobile.png"
+      ],
+      "layout": "Login a due colonne; editor con selettore laterale da 280px (230px sotto 1050px). Sotto 760px: select nativa al posto della lista, campi a una colonna e voti a due. Barra di salvataggio adesiva in alto.",
+      "states": [
+        "Credenziale GitHub solo in memoria; nessuna persistenza nel browser.",
+        "Archivio salvato distinto dalla pubblicazione verificata sui dati pubblici.",
+        "Conflitto con confronto dei campi e riporto delle modifiche da controllare prima del salvataggio.",
+        "Conferma esplicita prima di scartare modifiche pendenti."
+      ],
+      "textareaFocus": "Focus e cursore predefiniti del browser: le regole condivise personalizzate non includono textarea."
+    }
   },
   "components": [
     {
@@ -405,6 +431,20 @@
       "description": "Evento nel calendario settimanale mobile; desktop più compatto.",
       "html": "<button class=\"ds-event\"><span>W01 · Indicativa · finestra prevista</span><strong>Una nuova esperienza</strong></button>",
       "css": ".ds-event{font-family:\"DM Sans\",sans-serif;cursor:pointer;display:block;width:100%;padding:12px;text-align:left;border:0;border-radius:6px;color:var(--green,#174e46);background:#e2ead5;overflow-wrap:anywhere}.ds-event span{display:block;font-size:11px;line-height:1.6;margin-bottom:5px}.ds-event strong{display:block;font-size:15px;line-height:1.5;font-weight:500}.ds-event:hover{background:#d6e3c3}.ds-event:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    },
+    {
+      "name": "Admin labelled field",
+      "kind": "input",
+      "description": "Campo del modulo riservato, con etichetta visibile e aiuto; testo a 16px su mobile.",
+      "html": "<label class=\"ds-admin-field\"><span>Nome dell’esperienza</span><input type=\"text\" value=\"Esperienza\"/><small>Il dato salvato sarà pubblico.</small></label>",
+      "css": ".ds-admin-field{display:flex;flex-direction:column;gap:9px;min-width:0;font:13px \"DM Sans\",sans-serif;color:var(--ink)}.ds-admin-field>span{font-weight:600}.ds-admin-field input{display:block;width:100%;min-width:0;min-height:46px;padding:12px;border:1px solid #bcc7b6;background:white;color:var(--ink);font:inherit;border-radius:8px;caret-color:var(--orange)}.ds-admin-field small{font-size:12px;line-height:1.65;color:var(--muted)}.ds-admin-field input:focus-visible{outline:3px solid var(--orange);outline-offset:4px}@media(max-width:760px){.ds-admin-field input{font-size:16px;padding:12px 10px}}"
+    },
+    {
+      "name": "Admin publication status",
+      "kind": "custom",
+      "description": "Salvataggio confermato nell’archivio, distinto dalla successiva pubblicazione; la variante online richiede corrispondenza dei dati pubblici.",
+      "html": "<div class=\"ds-publication-status\" role=\"status\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg><div><strong>Salvato. Il sito si aggiornerà dopo la pubblicazione automatica.</strong><p>Può richiedere alcuni minuti. Non devi salvare di nuovo o modificare il CSV.</p><button type=\"button\">Controlla sito</button></div></div>",
+      "css": ".ds-publication-status{display:flex;gap:13px;align-items:flex-start;padding:20px;border:1px solid #c7cbb7;border-radius:12px;background:#f2efe1;color:#655526;font-family:\"DM Sans\",sans-serif}.ds-publication-status>svg{margin-top:2px;flex-shrink:0}.ds-publication-status strong{font-size:13px;font-weight:600;line-height:1.6}.ds-publication-status p{font-size:12px;margin:6px 0 0}.ds-publication-status button{border:0;background:transparent;color:inherit;padding:8px 0;min-height:32px;text-decoration:underline;text-underline-offset:4px;font:11px \"DM Sans\",sans-serif;cursor:pointer;margin-top:13px}.ds-publication-status button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}.ds-publication-status button:disabled{opacity:.45;cursor:not-allowed}.ds-publication-status.ds-is-online{color:var(--green);background:#e8eddf;border-color:#c9d3bc}@media(max-width:760px){.ds-publication-status{padding:17px 15px;gap:10px}.ds-publication-status button{font-size:12px}}"
     }
   ],
   "narrative": {
@@ -421,14 +461,16 @@
       "Do usare il petrolio per azioni primarie e selezioni, e l’arancio per accenti e focus.",
       "Do conservare metadati leggibili e nomi accessibili quando le etichette visive diventano icone.",
       "Do usare il calendario settimanale su mobile e testo secondario per i giorni fuori mese.",
-      "Do mantenere font locali, stati vuoti onesti e ripristino del focus del dialog."
+      "Do mantenere font locali, stati vuoti onesti e ripristino del focus del dialog.",
+      "Do distinguere archivio salvato e dati pubblicamente online nel pannello di gestione."
     ],
     "donts": [
       "Don’t presentare una settimana indicativa come una prenotazione confermata.",
       "Don’t codificare stato o prova esclusivamente con il colore.",
       "Don’t comprimere la griglia mensile in sette colonne di eventi illeggibili sul telefono.",
       "Don’t aggiungere ombre alle card ordinarie o animazioni decorative continue.",
-      "Don’t inventare fotografie, voti o ricordi quando i dati non li contengono."
+      "Don’t inventare fotografie, voti o ricordi quando i dati non li contengono.",
+      "Don’t trattare un conflitto come un salvataggio riuscito o scartare una bozza senza conferma."
     ]
   }
 }

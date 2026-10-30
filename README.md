@@ -18,10 +18,14 @@ npm run preview
 ```
 I font e le icone sono distribuiti nel sito: non dipendono da CDN.
 
-## Aggiornare senza Google Sheets
+## Aggiornare dal pannello riservato
+Aprire **Gestione** nel footer, oppure [il pannello](https://audiophonicartsstudio-source.github.io/52-settimane-fuori-di-testa/gestione.html). Si accede con un token GitHub fine-grained limitato al solo repository, con Contents: Read and write. Il pannello consente di aggiornare tutte le 52 esperienze, prenotazioni, date, esiti, diario e voti. I salvataggi sono condivisi e tracciati; la pubblicazione segue automaticamente. Non è un archivio locale del browser e non richiede nuovi servizi.
+Istruzioni del primo accesso e recupero: [docs/GESTIONE_ESPERIENZE.md](docs/GESTIONE_ESPERIENZE.md).
+
+## Aggiornamento tecnico alternativo senza Google Sheets
 La **sola fonte modificabile iniziale** è `data/esperienze_2027.csv`. Conservare intestazioni e ID W01–W52. Aggiornare prenotazione, data confermata, esito, diario o voti; eseguire `npm run build` e pubblicare il nuovo commit. Il JSON normalizzato viene generato dal CSV: non modificarlo manualmente. Sul server di sviluppo, dopo una modifica ai dati eseguire `npm run sync` e ricaricare.
 
-Nessuna modifica nel browser, nessun localStorage come archivio, nessuna registrazione. Il sito è pubblico una volta pubblicato su Pages. Le note e i link immessi nei dati diventano pubblici.
+La consultazione pubblica non richiede registrazione. Le modifiche dal pannello richiedono un token autorizzato da GitHub; nessun localStorage come archivio o deposito di credenziali. Il sito è pubblico una volta pubblicato su Pages. Le note e i link immessi nei dati diventano pubblici.
 
 ## Regole e decisioni
 - `esito=Fatto` è l'unico criterio di completamento. Una settimana trascorsa non viene mai completata o saltata automaticamente.
@@ -41,12 +45,14 @@ Non forniti: workbook XLSX originale, registro `scuole_fonti_2026.csv`, JSON di 
 ## Pubblicazione
 Seguire [docs/DEPLOY_GITHUB_PAGES.md](docs/DEPLOY_GITHUB_PAGES.md). Nessun servizio Google è necessario. Il workflow installa, verifica, testa, sincronizza, compila e distribuisce. La configurazione base segue il path Pages, con default relativo per altri hosting statici.
 
-## Google Sheets facoltativo
-[docs/SETUP_GOOGLE_SHEETS.md](docs/SETUP_GOOGLE_SHEETS.md). Quando `SHEETS_CSV_URL` è impostata, il foglio diventa la fonte canonica: smettere di modificare il CSV locale. Nessuna chiave API, nessun fetch Sheets dal browser. Il workflow scarica il CSV lato server tre volte al giorno, su push e manualmente.
+## Predisposizione Google Sheets (non in uso)
+Non attivare Sheets mentre si usa il pannello: la fonte canonica è il CSV gestito dal pannello. La precedente predisposizione è documentata in [docs/SETUP_GOOGLE_SHEETS.md](docs/SETUP_GOOGLE_SHEETS.md). Quando `SHEETS_CSV_URL` è impostata, il foglio diventa la fonte canonica: smettere di modificare il CSV locale. Nessuna chiave API, nessun fetch Sheets dal browser. Il workflow scarica il CSV lato server tre volte al giorno, su push e manualmente.
 
-Gli snapshot validi di Sheets sono conservati dalla cache Actions separatamente per URL. Un errore conserva le attività dell'ultimo snapshot e il timestamp riuscito, pubblicando metadata `stale=true` e un avviso visibile. Se è la prima sync o la cache è stata rimossa da GitHub, il fallback è il dataset locale incluso, dichiarato come tale. Il timestamp non viene aggiornato come se la sync fosse riuscita. Il fallimento non blocca la pubblicazione del fallback; un warning compare nei log. La cache GitHub può essere espulsa: esportare periodicamente i propri dati dal foglio se serve una copia durevole.
+Gli snapshot validi, anche del CSV locale gestito dal pannello, sono conservati dalla cache Actions separatamente per URL. Un errore conserva le attività dell'ultimo snapshot e il timestamp riuscito, pubblicando metadata `stale=true` e un avviso visibile. Se è la prima sync o la cache è stata rimossa da GitHub, il fallback è il dataset locale incluso, dichiarato come tale. Il timestamp non viene aggiornato come se la sync fosse riuscita. Il fallimento non blocca la pubblicazione del fallback; un warning compare nei log. La cache GitHub può essere espulsa: esportare periodicamente i propri dati dal foglio se serve una copia durevole.
 
 ## Struttura
+- `src/admin/`: pannello, login, editor e client GitHub con controllo conflitti.
+- `gestione.html`, `src/admin-main.tsx`: ingresso statico del pannello, separato dal sito pubblico.
 - `src/components/`: Dashboard, Filters, Timeline, Calendar, ActivityCard, ActivityDetail, Adventures, Footer.
 - `src/model.ts`, `src/types.ts`: contratto TypeScript e logica testabile.
 - `scripts/data.mjs`: parser CSV, normalizzatore e validatore condivisi tra build e caricamento.

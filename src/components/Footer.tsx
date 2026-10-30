@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LockKeyhole } from "lucide-react";
 import type { Snapshot } from "../types";
 export function Footer({ meta }: { meta: Snapshot["meta"] }) {
   return (
@@ -10,10 +10,16 @@ export function Footer({ meta }: { meta: Snapshot["meta"] }) {
         </a>
         <p>Un anno. Quattro amici. Un sacco di prime volte.</p>
       </div>
+      <a
+        className="admin-link"
+        href={import.meta.env.BASE_URL + "gestione.html"}
+      >
+        <LockKeyhole size={15} /> Gestione
+      </a>
       <div className="footer-meta">
         <span>
-          Dati {meta.source === "local" ? "locali" : "da Google Sheets"} ·
-          aggiornati il{" "}
+          Dati {meta.source === "local" ? "del calendario" : "da Google Sheets"}{" "}
+          · aggiornati il{" "}
           {new Intl.DateTimeFormat("it-IT", {
             dateStyle: "medium",
             timeStyle: "short",
@@ -21,8 +27,9 @@ export function Footer({ meta }: { meta: Snapshot["meta"] }) {
           }).format(new Date(meta.last_successful_sync))}
         </span>
         <span>
-          Gli aggiornamenti vengono gestiti nel calendario{" "}
-          {meta.source === "local" ? "locale" : "condiviso"}.
+          {meta.source === "local"
+            ? "Gli aggiornamenti vengono gestiti dal pannello riservato."
+            : "Gli aggiornamenti vengono gestiti nel calendario condiviso."}
         </span>
         <span>Le fonti descrivono proposte da riconfermare per il 2027.</span>
       </div>

@@ -19,11 +19,7 @@ export async function runSync() {
   const source = url ? "google-sheets" : "local";
   const cached = await readJSON(".cache/esperienze.json");
   const local = await readJSON("data/esperienze_2027.json");
-  const previous = url
-    ? cached?.meta.source === "google-sheets"
-      ? cached
-      : local
-    : local;
+  const previous = cached?.meta.source === source ? cached : local;
   const csv = async () => {
     if (!url) return readFile("data/esperienze_2027.csv", "utf8");
     const u = new URL(url);
@@ -47,10 +43,11 @@ export async function runSync() {
   } else if (source === "local") {
     // Do not invent a new data update time when unchanged local data is rebuilt.
     if (
-      local &&
-      JSON.stringify(local.activities) === JSON.stringify(snapshot.activities)
+      previous &&
+      JSON.stringify(previous.activities) ===
+        JSON.stringify(snapshot.activities)
     )
-      snapshot.meta.last_successful_sync = local.meta.last_successful_sync;
+      snapshot.meta.last_successful_sync = previous.meta.last_successful_sync;
     await atomic("data/esperienze_2027.json", snapshot);
   }
   if (!snapshot.meta.stale) await atomic(".cache/esperienze.json", snapshot);

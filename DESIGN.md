@@ -152,6 +152,8 @@ Il calendario mobile sostituisce la griglia con blocchi settimanali: sette date 
 
 Le esperienze indicative sono posizionate il lunedì della settimana; una data confermata ne sostituisce la posizione. Le viste condividono ricerca e filtri. Selezionare un mese aggiorna il calendario; navigare tra mesi aggiorna il filtro mese.
 
+Il pannello `gestione.html` estende lo stesso sistema. L’accesso affianca introduzione e scheda token in due colonne; sotto 760px le impila. L’editor desktop affianca un selettore laterale da 280px al modulo, con distanza di 42px; sotto 1050px il selettore scende a 230px e la distanza a 28px. Sotto 760px la lista lascia posto a una select nativa, i campi passano da due colonne a una e i quattro voti da quattro colonne a due. La barra di salvataggio resta adesiva in alto durante lo scorrimento, con fondo carta e separatore inferiore; i campi hanno margine di scorrimento superiore di 160px per restare raggiungibili.
+
 ## Elevation & Depth
 
 Le superfici ordinarie sono piatte: bordi sottili e fondi tonali creano separazione. Il poster usa una lieve inclinazione statica (2°, 1° su mobile). Solo il dialog è sollevato: ombra `0 20px 70px #182d3633` e sfondo oscurato `#102b24a6`.
@@ -185,6 +187,19 @@ Tessere salvia con numero della settimana e indicazione temporale sopra il titol
 ### Detail dialog
 Dialog nativo con titolo associato tramite `aria-labelledby`, apertura modale, focus iniziale sul pulsante di chiusura e contenimento del focus del browser. Chiusura con pulsante, Esc o clic sullo sfondo esterno; alla chiusura il focus torna al controllo di partenza e lo scorrimento della pagina viene ripristinato. Barra superiore fissa durante lo scorrimento interno. Larghezza desktop `min(640px, calc(100% - 32px))`, altezza massima 90dvh; su mobile margine totale di 18px e altezza massima 94dvh. Fatti in due colonne, note di verifica evidenziate e nessun dato mancante sostituito da un risultato inventato.
 
+### Reserved access
+Scheda bianca con bordo sottile, raggio di 16px e pulsante primario a tutta larghezza. Il campo token è di tipo password, etichettato e accompagnato da una spiegazione della durata della sessione. Le istruzioni GitHub sono raccolte in un dettaglio espandibile. L’accesso verifica utente, repository e dati tramite API GitHub; la credenziale resta nella memoria della pagina e viene rimossa all’uscita o alla chiusura. Nessun nuovo servizio o persistenza nel browser.
+
+### Activity editor
+Campi bianchi con bordo salvia, raggio di 8px, altezza minima di 46px e label visibile. I gruppi hanno legenda geometrica e separatore sottile: esperienza e scuola, prenotazione e risultato, diario e ricordi, voti. Su mobile input, select e textarea usano testo di 16px. Le textarea sono ridimensionabili verticalmente; il focus e il cursore restano quelli predefiniti del browser, poiché le regole condivise personalizzate non includono textarea. La selezione desktop è piena petrolio con stato `aria-pressed`; il conteggio risultati è annunciato con `aria-live="polite"`.
+
+La barra superiore distingue modifiche pendenti e archivio salvato; salvataggio e annullamento sono disabilitati senza modifiche o durante un’operazione. Un messaggio separato distingue il salvataggio su GitHub dalla pubblicazione: stato caldo in attesa, salvia quando i dati pubblici corrispondono all’ultimo salvataggio. Testo e icona rendono il significato esplicito; sono disponibili collegamenti al commit e alla pubblicazione e un controllo manuale del sito.
+
+### Conflict and discard protection
+Il pannello di conflitto confronta “Ora salvato” e “Nel tuo modulo” per i campi cambiati nell’archivio; due colonne su desktop e una su mobile. Riportare le modifiche locali sulla versione aggiornata richiede controllo e nuovo salvataggio esplicito. Il client rilegge il CSV prima di salvare e usa lo SHA GitHub per proteggere dagli aggiornamenti concorrenti.
+
+Cambio esperienza, annullamento e uscita con modifiche pendenti aprono un dialog nativo di conferma; ricaricare dati differenti richiede lo stesso consenso allo scarto. La scelta iniziale è “Continua a modificare”; l’altra è “Scarta e prosegui”. Il dialog riprende carta, raggio di 16px, ombra e sfondo oscurato del sistema, con larghezza massima di 480px; alla chiusura ripristina il focus precedente. L’uscita dalla pagina con modifiche o operazione in corso attiva anche l’avviso nativo del browser.
+
 ## Do's and Don'ts
 
 ### Do:
@@ -193,6 +208,7 @@ Dialog nativo con titolo associato tramite `aria-labelledby`, apertura modale, f
 - Do conservare metadati leggibili e nomi accessibili quando le etichette visive diventano icone.
 - Do usare il calendario settimanale su mobile e testo secondario per i giorni fuori mese.
 - Do mantenere font locali, stati vuoti onesti e ripristino del focus del dialog.
+- Do distinguere archivio salvato e dati pubblicamente online nel pannello di gestione.
 
 ### Don't:
 - Don’t presentare una settimana indicativa come una prenotazione confermata.
@@ -200,3 +216,4 @@ Dialog nativo con titolo associato tramite `aria-labelledby`, apertura modale, f
 - Don’t comprimere la griglia mensile in sette colonne di eventi illeggibili sul telefono.
 - Don’t aggiungere ombre alle card ordinarie o animazioni decorative continue.
 - Don’t inventare fotografie, voti o ricordi quando i dati non li contengono.
+- Don’t trattare un conflitto come un salvataggio riuscito o scartare una bozza senza conferma.
