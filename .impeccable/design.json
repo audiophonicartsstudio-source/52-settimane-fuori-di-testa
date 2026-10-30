@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T17:35:46.701Z",
+  "title": "Design System: 52 settimane fuori di testa",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0070 88.64)",
+          "oklch(26% 0.0070 88.64)",
+          "oklch(38% 0.0070 88.64)",
+          "oklch(49% 0.0070 88.64)",
+          "oklch(61% 0.0070 88.64)",
+          "oklch(72% 0.0070 88.64)",
+          "oklch(84% 0.0070 88.64)",
+          "oklch(95% 0.0070 88.64)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0345 175.20)",
+          "oklch(26% 0.0345 175.20)",
+          "oklch(38% 0.0345 175.20)",
+          "oklch(49% 0.0345 175.20)",
+          "oklch(61% 0.0345 175.20)",
+          "oklch(72% 0.0345 175.20)",
+          "oklch(84% 0.0345 175.20)",
+          "oklch(95% 0.0345 175.20)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15% 0.0584 181.70)",
+          "oklch(26% 0.0584 181.70)",
+          "oklch(38% 0.0584 181.70)",
+          "oklch(49% 0.0584 181.70)",
+          "oklch(61% 0.0584 181.70)",
+          "oklch(72% 0.0584 181.70)",
+          "oklch(84% 0.0584 181.70)",
+          "oklch(95% 0.0584 181.70)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Green hover",
+        "tonalRamp": [
+          "oklch(15% 0.0506 181.04)",
+          "oklch(26% 0.0506 181.04)",
+          "oklch(38% 0.0506 181.04)",
+          "oklch(49% 0.0506 181.04)",
+          "oklch(61% 0.0506 181.04)",
+          "oklch(72% 0.0506 181.04)",
+          "oklch(84% 0.0506 181.04)",
+          "oklch(95% 0.0506 181.04)"
+        ]
+      },
+      "orange": {
+        "role": "secondary",
+        "displayName": "Orange",
+        "tonalRamp": [
+          "oklch(15% 0.1417 36.03)",
+          "oklch(26% 0.1417 36.03)",
+          "oklch(38% 0.1417 36.03)",
+          "oklch(49% 0.1417 36.03)",
+          "oklch(61% 0.1417 36.03)",
+          "oklch(72% 0.1417 36.03)",
+          "oklch(84% 0.1417 36.03)",
+          "oklch(95% 0.1417 36.03)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0175 151.47)",
+          "oklch(26% 0.0175 151.47)",
+          "oklch(38% 0.0175 151.47)",
+          "oklch(49% 0.0175 151.47)",
+          "oklch(61% 0.0175 151.47)",
+          "oklch(72% 0.0175 151.47)",
+          "oklch(84% 0.0175 151.47)",
+          "oklch(95% 0.0175 151.47)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0135 111.29)",
+          "oklch(26% 0.0135 111.29)",
+          "oklch(38% 0.0135 111.29)",
+          "oklch(49% 0.0135 111.29)",
+          "oklch(61% 0.0135 111.29)",
+          "oklch(72% 0.0135 111.29)",
+          "oklch(84% 0.0135 111.29)",
+          "oklch(95% 0.0135 111.29)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "sage-panel": {
+        "role": "secondary",
+        "displayName": "Sage panel",
+        "tonalRamp": [
+          "oklch(15% 0.0149 119.11)",
+          "oklch(26% 0.0149 119.11)",
+          "oklch(38% 0.0149 119.11)",
+          "oklch(49% 0.0149 119.11)",
+          "oklch(61% 0.0149 119.11)",
+          "oklch(72% 0.0149 119.11)",
+          "oklch(84% 0.0149 119.11)",
+          "oklch(95% 0.0149 119.11)"
+        ]
+      },
+      "poster": {
+        "role": "secondary",
+        "displayName": "Poster",
+        "tonalRamp": [
+          "oklch(15% 0.0551 117.57)",
+          "oklch(26% 0.0551 117.57)",
+          "oklch(38% 0.0551 117.57)",
+          "oklch(49% 0.0551 117.57)",
+          "oklch(61% 0.0551 117.57)",
+          "oklch(72% 0.0551 117.57)",
+          "oklch(84% 0.0551 117.57)",
+          "oklch(95% 0.0551 117.57)"
+        ]
+      },
+      "empty": {
+        "role": "neutral",
+        "displayName": "Empty",
+        "tonalRamp": [
+          "oklch(15% 0.0107 100.83)",
+          "oklch(26% 0.0107 100.83)",
+          "oklch(38% 0.0107 100.83)",
+          "oklch(49% 0.0107 100.83)",
+          "oklch(61% 0.0107 100.83)",
+          "oklch(72% 0.0107 100.83)",
+          "oklch(84% 0.0107 100.83)",
+          "oklch(95% 0.0107 100.83)"
+        ]
+      },
+      "event": {
+        "role": "secondary",
+        "displayName": "Event",
+        "tonalRamp": [
+          "oklch(15% 0.0292 124.01)",
+          "oklch(26% 0.0292 124.01)",
+          "oklch(38% 0.0292 124.01)",
+          "oklch(49% 0.0292 124.01)",
+          "oklch(61% 0.0292 124.01)",
+          "oklch(72% 0.0292 124.01)",
+          "oklch(84% 0.0292 124.01)",
+          "oklch(95% 0.0292 124.01)"
+        ]
+      },
+      "event-hover": {
+        "role": "secondary",
+        "displayName": "Event hover",
+        "tonalRamp": [
+          "oklch(15% 0.0449 125.33)",
+          "oklch(26% 0.0449 125.33)",
+          "oklch(38% 0.0449 125.33)",
+          "oklch(49% 0.0449 125.33)",
+          "oklch(61% 0.0449 125.33)",
+          "oklch(72% 0.0449 125.33)",
+          "oklch(84% 0.0449 125.33)",
+          "oklch(95% 0.0449 125.33)"
+        ]
+      },
+      "chip": {
+        "role": "neutral",
+        "displayName": "Chip",
+        "tonalRamp": [
+          "oklch(15% 0.0191 119.76)",
+          "oklch(26% 0.0191 119.76)",
+          "oklch(38% 0.0191 119.76)",
+          "oklch(49% 0.0191 119.76)",
+          "oklch(61% 0.0191 119.76)",
+          "oklch(72% 0.0191 119.76)",
+          "oklch(84% 0.0191 119.76)",
+          "oklch(95% 0.0191 119.76)"
+        ]
+      },
+      "chip-ink": {
+        "role": "neutral",
+        "displayName": "Chip ink",
+        "tonalRamp": [
+          "oklch(15% 0.0568 139.46)",
+          "oklch(26% 0.0568 139.46)",
+          "oklch(38% 0.0568 139.46)",
+          "oklch(49% 0.0568 139.46)",
+          "oklch(61% 0.0568 139.46)",
+          "oklch(72% 0.0568 139.46)",
+          "oklch(84% 0.0568 139.46)",
+          "oklch(95% 0.0568 139.46)"
+        ]
+      },
+      "seasonal": {
+        "role": "neutral",
+        "displayName": "Seasonal",
+        "tonalRamp": [
+          "oklch(15% 0.0283 74.30)",
+          "oklch(26% 0.0283 74.30)",
+          "oklch(38% 0.0283 74.30)",
+          "oklch(49% 0.0283 74.30)",
+          "oklch(61% 0.0283 74.30)",
+          "oklch(72% 0.0283 74.30)",
+          "oklch(84% 0.0283 74.30)",
+          "oklch(95% 0.0283 74.30)"
+        ]
+      },
+      "seasonal-ink": {
+        "role": "neutral",
+        "displayName": "Seasonal ink",
+        "tonalRamp": [
+          "oklch(15% 0.0952 63.77)",
+          "oklch(26% 0.0952 63.77)",
+          "oklch(38% 0.0952 63.77)",
+          "oklch(49% 0.0952 63.77)",
+          "oklch(61% 0.0952 63.77)",
+          "oklch(72% 0.0952 63.77)",
+          "oklch(84% 0.0952 63.77)",
+          "oklch(95% 0.0952 63.77)"
+        ]
+      },
+      "idea": {
+        "role": "neutral",
+        "displayName": "Idea",
+        "tonalRamp": [
+          "oklch(15% 0.0136 314.76)",
+          "oklch(26% 0.0136 314.76)",
+          "oklch(38% 0.0136 314.76)",
+          "oklch(49% 0.0136 314.76)",
+          "oklch(61% 0.0136 314.76)",
+          "oklch(72% 0.0136 314.76)",
+          "oklch(84% 0.0136 314.76)",
+          "oklch(95% 0.0136 314.76)"
+        ]
+      },
+      "idea-ink": {
+        "role": "neutral",
+        "displayName": "Idea ink",
+        "tonalRamp": [
+          "oklch(15% 0.0759 316.98)",
+          "oklch(26% 0.0759 316.98)",
+          "oklch(38% 0.0759 316.98)",
+          "oklch(49% 0.0759 316.98)",
+          "oklch(61% 0.0759 316.98)",
+          "oklch(72% 0.0759 316.98)",
+          "oklch(84% 0.0759 316.98)",
+          "oklch(95% 0.0759 316.98)"
+        ]
+      },
+      "verify": {
+        "role": "neutral",
+        "displayName": "Verify",
+        "tonalRamp": [
+          "oklch(15% 0.0190 46.81)",
+          "oklch(26% 0.0190 46.81)",
+          "oklch(38% 0.0190 46.81)",
+          "oklch(49% 0.0190 46.81)",
+          "oklch(61% 0.0190 46.81)",
+          "oklch(72% 0.0190 46.81)",
+          "oklch(84% 0.0190 46.81)",
+          "oklch(95% 0.0190 46.81)"
+        ]
+      },
+      "verify-ink": {
+        "role": "neutral",
+        "displayName": "Verify ink",
+        "tonalRamp": [
+          "oklch(15% 0.1043 37.69)",
+          "oklch(26% 0.1043 37.69)",
+          "oklch(38% 0.1043 37.69)",
+          "oklch(49% 0.1043 37.69)",
+          "oklch(61% 0.1043 37.69)",
+          "oklch(72% 0.1043 37.69)",
+          "oklch(84% 0.1043 37.69)",
+          "oklch(95% 0.1043 37.69)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titolo principale",
+        "purpose": "Primo blocco; le misure responsive sono documentate in DESIGN.md."
+      },
+      "body": {
+        "displayName": "Lettura",
+        "purpose": "DM Sans locale per testo, metadati e controlli."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 20px 70px #182d3633",
+        "purpose": "Solo dialog modale."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "0.18s ease",
+        "purpose": "Sfondo, colore e bordo; disattivata con prefers-reduced-motion."
+      },
+      {
+        "name": "page-scroll",
+        "value": "smooth",
+        "purpose": "Ancore della pagina; auto con prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-hero",
+        "value": "1400px (min-width)"
+      },
+      {
+        "name": "intermediate",
+        "value": "1050px (max-width)"
+      },
+      {
+        "name": "mobile",
+        "value": "760px (max-width)"
+      }
+    ],
+    "focus": {
+      "outline": "3px solid var(--orange)",
+      "outlineOffset": "4px"
+    },
+    "backdrop": "#102b24a6",
+    "rampNote": "Tonal ramps are synthesized OKLCH previews, not additional shipped CSS tokens."
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Azione primaria o secondaria con focus visibile.",
+      "html": "<button class=\"ds-button-primary\">Organizziamoci →</button>",
+      "css": ".ds-button-primary{font-family:\"DM Sans\",sans-serif;cursor:pointer;background:var(--green,#174e46);color:#fff;border:1px solid var(--green,#174e46);border-radius:8px;padding:13px 20px;min-height:44px;font-size:13px;font-weight:600;transition:background .18s,color .18s}.ds-button-primary:hover{background:#103e37}.ds-button-primary:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    },
+    {
+      "name": "Outline button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Azione primaria o secondaria con focus visibile.",
+      "html": "<button class=\"ds-button-outline\">Organizziamoci →</button>",
+      "css": ".ds-button-outline{font-family:\"DM Sans\",sans-serif;cursor:pointer;background:transparent;color:var(--ink,#243e37);border:1px solid #7d9688;border-radius:8px;padding:13px 20px;min-height:44px;font-size:13px;font-weight:600;transition:background .18s,color .18s}.ds-button-outline:hover{background:#e8eee5}.ds-button-outline:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Ricerca con etichetta e campo nativo.",
+      "html": "<label class=\"ds-search\"><span>Cerca un’esperienza</span><input type=\"search\" placeholder=\"Cosa ti va di provare?\"></label>",
+      "css": ".ds-search{display:block;font-family:\"DM Sans\",sans-serif;color:var(--muted,#5d675f);font-size:12px}.ds-search input{display:block;width:100%;margin-top:8px;background:#fff;border:1px solid #cbd1c5;border-radius:8px;padding:15px 16px;color:var(--ink,#243e37);font:13px \"DM Sans\",sans-serif;caret-color:var(--orange,#ac4529)}.ds-search input:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    },
+    {
+      "name": "Month navigation",
+      "kind": "nav",
+      "refersTo": "month-selected",
+      "description": "Filtro mensile con selezione esplicita.",
+      "html": "<nav class=\"ds-months\" aria-label=\"Filtra per mese\"><button aria-pressed=\"false\">Tutto l’anno</button><button aria-pressed=\"true\">Gen</button><button aria-pressed=\"false\">Feb</button></nav>",
+      "css": ".ds-months{display:flex;gap:3px;overflow-x:auto;border-bottom:1px solid var(--line,#dedfd5);padding-bottom:12px}.ds-months button{font-family:\"DM Sans\",sans-serif;cursor:pointer;border:0;background:transparent;color:var(--ink,#243e37);border-radius:8px;padding:11px 15px;font-size:12px;min-height:42px;white-space:nowrap}.ds-months button[aria-pressed=\"true\"]{background:var(--green,#174e46);color:#fff}.ds-months button:not([aria-pressed=\"true\"]):hover{background:#e9ece2}.ds-months button:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    },
+    {
+      "name": "Category badge",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Badge base; le varianti dipendono dal codice di prova.",
+      "html": "<span class=\"ds-chip\">Sport</span>",
+      "css": ".ds-chip{display:inline-block;font-family:\"DM Sans\",sans-serif;font-size:10px;font-weight:600;padding:4px 8px;background:#e9eddf;color:#3a5234;border-radius:5px}"
+    },
+    {
+      "name": "Activity card",
+      "kind": "card",
+      "refersTo": "activity-card",
+      "description": "Estratto della card con numero di settimana, metadati e titolo azionabile.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-week\">SETT.<strong>01</strong></span><div><span class=\"ds-card-meta\">Finestra prevista</span><h3><button>Una nuova esperienza</button></h3><p>Sede e disponibilità da confermare</p></div></article>",
+      "css": ".ds-card{display:flex;gap:23px;padding:23px;background:#fff;border:1px solid #dce0d5;border-radius:16px;color:var(--ink,#243e37);font-family:\"DM Sans\",sans-serif;transition:border-color .18s}.ds-card:hover{border-color:#8d9e84}.ds-week{display:flex;flex-direction:column;align-items:center;font-size:8px;color:var(--muted,#5d675f);min-width:38px}.ds-week strong{font:500 32px \"Space Grotesk\",sans-serif;color:#6d7f66;font-variant-numeric:tabular-nums}.ds-card-meta{font-size:10px;color:var(--muted,#5d675f)}.ds-card h3{margin:11px 0 7px;font:600 22px \"Space Grotesk\",sans-serif;letter-spacing:-.025em}.ds-card button{font:inherit;color:inherit;border:0;padding:0;background:transparent;text-align:left;cursor:pointer}.ds-card button:hover{text-decoration:underline;text-underline-offset:4px}.ds-card button:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}.ds-card p{font-size:11px;line-height:1.6;margin:0;color:var(--muted,#5d675f)}"
+    },
+    {
+      "name": "Calendar event",
+      "kind": "custom",
+      "refersTo": "calendar-event",
+      "description": "Evento nel calendario settimanale mobile; desktop più compatto.",
+      "html": "<button class=\"ds-event\"><span>W01 · Indicativa · finestra prevista</span><strong>Una nuova esperienza</strong></button>",
+      "css": ".ds-event{font-family:\"DM Sans\",sans-serif;cursor:pointer;display:block;width:100%;padding:12px;text-align:left;border:0;border-radius:6px;color:var(--green,#174e46);background:#e2ead5;overflow-wrap:anywhere}.ds-event span{display:block;font-size:11px;line-height:1.6;margin-bottom:5px}.ds-event strong{display:block;font-size:15px;line-height:1.5;font-weight:500}.ds-event:hover{background:#d6e3c3}.ds-event:focus-visible{outline:3px solid var(--orange,#ac4529);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "overview": "Diario editoriale e calendario operativo, chiaro, pulito e giocoso per adulti. Petrolio e arancio danno carattere senza sovrastare le informazioni. La composizione usa spazio, numeri di settimana e titoli netti; il poster inclinato, gli asterischi e le iniziali degli amici aggiungono il tono personale.\n\nLa consultazione resta centrale: stato reale, finestre indicative e dettagli verificabili devono essere leggibili da telefono e desktop. Questa documentazione descrive il sistema implementato; non aggiunge una nuova identità visiva.",
+    "keyCharacteristics": [
+      "Carta calda, petrolio strutturale e arancio di accento.",
+      "Titoli geometrici e lettura morbida, con font distribuiti localmente.",
+      "Timeline scandita dalle settimane e calendario adattato al telefono.",
+      "Superfici quasi piatte, bordi sottili e interazioni discrete."
+    ],
+    "rules": [],
+    "dos": [
+      "Do mantenere separati finestra prevista, prenotazione ed esito anche nella gerarchia visiva.",
+      "Do usare il petrolio per azioni primarie e selezioni, e l’arancio per accenti e focus.",
+      "Do conservare metadati leggibili e nomi accessibili quando le etichette visive diventano icone.",
+      "Do usare il calendario settimanale su mobile e testo secondario per i giorni fuori mese.",
+      "Do mantenere font locali, stati vuoti onesti e ripristino del focus del dialog."
+    ],
+    "donts": [
+      "Don’t presentare una settimana indicativa come una prenotazione confermata.",
+      "Don’t codificare stato o prova esclusivamente con il colore.",
+      "Don’t comprimere la griglia mensile in sette colonne di eventi illeggibili sul telefono.",
+      "Don’t aggiungere ombre alle card ordinarie o animazioni decorative continue.",
+      "Don’t inventare fotografie, voti o ricordi quando i dati non li contengono."
+    ]
+  }
+}

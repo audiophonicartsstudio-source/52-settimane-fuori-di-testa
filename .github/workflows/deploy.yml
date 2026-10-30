@@ -1,0 +1,66 @@
+name: Verifica e pubblica il calendario
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5,13,21 * * *"
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Identifica la fonte per lo snapshot
+        id: source
+        env:
+          SHEETS_CSV_URL: ${{ vars.SHEETS_CSV_URL }}
+        run: node -e "const c=require('node:crypto');require('node:fs').appendFileSync(process.env.GITHUB_OUTPUT,'key='+c.createHash('sha256').update(process.env.SHEETS_CSV_URL||'local').digest('hex')+'\n')"
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/esperienze.json
+          key: snapshot-${{ steps.source.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: snapshot-${{ steps.source.outputs.key }}-
+      - run: npm run check
+      - run: npm test
+      - name: Configura Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Genera sito e sincronizza dati
+        env:
+          SHEETS_CSV_URL: ${{ vars.SHEETS_CSV_URL }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+        run: npm run build
+      - name: Conserva ultimo snapshot valido
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/esperienze.json
+          key: snapshot-${{ steps.source.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pubblica
+        id: deployment
+        uses: actions/deploy-pages@v4

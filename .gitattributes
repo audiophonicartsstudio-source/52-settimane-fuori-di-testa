@@ -1,0 +1,2 @@
+# Keep original UTF-8 BOM and CRLF bytes of supplied CSV files.
+*.csv -text whitespace=cr-at-eol
