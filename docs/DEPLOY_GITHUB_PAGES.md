@@ -1,10 +1,7 @@
 # Pubblicare su GitHub Pages
 1. Creare su GitHub un repository **separato** chiamato `52-settimane-fuori-di-testa`, senza README automatico. Non usare repository PersonalOS/MIA. Per la via più semplice con GitHub Free usare un repository pubblico.
-2. Aprire un terminale nella cartella di questo progetto. Se non esiste un repository Git dedicato:
+2. Il repository locale è già inizializzato su main e contiene il progetto completo salvato. Aprire un terminale nella cartella del progetto e collegarlo al nuovo repository remoto:
    ```sh
-   git init -b main
-   git add .
-   git commit -m "Realizza 52 settimane fuori di testa"
    git remote add origin https://github.com/TUO-UTENTE/52-settimane-fuori-di-testa.git
    git push -u origin main
    ```
