@@ -1,15 +1,21 @@
 # Pubblicare su GitHub Pages
-1. Creare su GitHub un repository **separato** chiamato `52-settimane-fuori-di-testa`, senza README automatico. Non usare repository PersonalOS/MIA. Per la via più semplice con GitHub Free usare un repository pubblico.
-2. Il repository locale è già inizializzato su main e contiene il progetto completo salvato. Aprire un terminale nella cartella del progetto e collegarlo al nuovo repository remoto:
+Il repository pubblico è già creato e collegato: [audiophonicartsstudio-source/52-settimane-fuori-di-testa](https://github.com/audiophonicartsstudio-source/52-settimane-fuori-di-testa).
+GitHub Pages è configurato con sorgente **GitHub Actions**. Non occorre ricreare il repository né aggiungere di nuovo origin.
+
+URL del sito: [52 settimane fuori di testa](https://audiophonicartsstudio-source.github.io/52-settimane-fuori-di-testa/).
+Stato delle pubblicazioni: [Actions](https://github.com/audiophonicartsstudio-source/52-settimane-fuori-di-testa/actions).
+
+## Pubblicare aggiornamenti
+1. Modificare i dati in `data/esperienze_2027.csv`, oppure il codice del sito. Conservare ID e intestazioni.
+2. Verificare il progetto con i comandi sotto.
+3. Salvare e caricare le modifiche:
    ```sh
-   git remote add origin https://github.com/TUO-UTENTE/52-settimane-fuori-di-testa.git
-   git push -u origin main
+   git add .
+   git commit -m "Aggiorna il calendario"
+   git push origin main
    ```
-   Sostituire TUO-UTENTE. Verificare che `git rev-parse --show-toplevel` punti a questo progetto, non alla cartella contenente altri progetti. Non caricare node_modules, cache, credenziali o materiale non pertinente.
-3. In **Settings → Pages → Build and deployment**, scegliere **GitHub Actions**.
-4. In **Actions → Verifica e pubblica il calendario → Run workflow**, eseguire su main. Dopo il push il workflow può essere già in corso.
-5. Attendere entrambi i job verdi. Il link viene mostrato nell'environment github-pages e in Settings → Pages, normalmente `https://TUO-UTENTE.github.io/52-settimane-fuori-di-testa/`.
-6. Aprire il link da telefono e desktop. Verificare titolo, 52 esperienze, ricerca, scheda W52, vista calendario, foto se aggiunte e data di aggiornamento nel footer.
+4. Attendere entrambi i job verdi in Actions. Per una nuova pubblicazione senza modifiche, usare **Verifica e pubblica il calendario → Run workflow** su main.
+5. Aprire il sito da telefono e desktop e verificare l'aggiornamento nel footer.
 
 Non serve configurare Google Sheets. Le modifiche al CSV locale entrano nel sito con un nuovo commit/push. Il workflow compila con il base_path restituito da GitHub Pages, quindi gestisce sottocartelle e dominio personalizzato. Non servono routing server-side né redirect 404.
 

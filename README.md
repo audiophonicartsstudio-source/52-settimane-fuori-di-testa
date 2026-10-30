@@ -1,6 +1,8 @@
 # 52 settimane fuori di testa
 SPA statica completa per il 2027 di Ale, Paco, Francesca e Clelia. Timeline di 52 esperienze, calendario mensile navigabile, dashboard, filtri combinabili, dettagli, diario e voti. Consultabile senza account e senza backend.
 
+Sito GitHub Pages: [52 settimane fuori di testa](https://audiophonicartsstudio-source.github.io/52-settimane-fuori-di-testa/). Repository pubblico: [codice e aggiornamenti](https://github.com/audiophonicartsstudio-source/52-settimane-fuori-di-testa).
+
 ## Avvio
 Richiede Node.js 22 o 24 LTS e npm.
 ```sh

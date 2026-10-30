@@ -20,7 +20,7 @@ Integrazione CLI: dopo errore Sheets, snapshot precedente preservato byte per by
 Browser: 52 card, ricerca, filtri mese/categoria, reset, dialog, Esc, ripristino focus, gratuità, prezzo ignoto, assenza link scuola se mancante, navigazione calendario e W52 nel gennaio 2028, fallback e riprova.
 
 ## Limiti verificabili solo dopo configurazione
-Non pubblicato su GitHub Pages: il connettore disponibile non crea repository e il browser GitHub richiede login. Workflow preparato e controllato staticamente, non ancora eseguito su GitHub.
+Repository creato e caricato su GitHub, poi reso pubblico su autorizzazione esplicita dell’utente. GitHub Pages configurato con build_type=workflow. L’esito corrente della pubblicazione è consultabile in [Actions](https://github.com/audiophonicartsstudio-source/52-settimane-fuori-di-testa/actions); URL configurato: https://audiophonicartsstudio-source.github.io/52-settimane-fuori-di-testa/.
 Google Sheets non collegato per scelta dell'utente: testati parser, validazione e fallimenti senza usare un foglio reale. Nessun aggiornamento scolastico o disponibilità 2027 verificato online. I 46 link sono preservati e validati sintatticamente, non certificati come ancora attivi.
 Viewport mobile emulato in Chromium, non dispositivo Android fisico. Revisione di accessibilità di base, non audit WCAG completo.
 Node 22.23.4 usato per installazione pulita e test browser. Node 26 di sistema ha restituito errori di rete nell'ambiente di esecuzione; le verifiche sono state completate con Node LTS, senza modificare l'installazione di sistema.
